@@ -14,10 +14,16 @@ function showTosError() {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // --v-- write your code here --v--
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  console.log(data);
 
-  // --^-- write your code here --^--
-
-  // eslint-disable-next-line no-alert
-  alert("Form submitted");
+  const tosStatus = data.tos;
+  if (data.tos != "on") {
+    alert("Click terms & conditions!");
+    showTosError();
+  } else {
+    alert("Form submitted");
+    hideTosError();
+  }
 });

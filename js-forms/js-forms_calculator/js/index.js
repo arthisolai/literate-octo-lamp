@@ -27,6 +27,25 @@ form.addEventListener("submit", (event) => {
   // --v-- write your code here --v--
 
   // --^-- write your code here --^--
+  const numberA = +event.target.elements["numberA"].value;
+  const numberB = +event.target.elements["numberB"].value;
 
-  resultOutput.textContent = result;
+  const operator = +event.target.elements["operator"].value;
+
+  let calc;
+  switch (operator) {
+    case "addition":
+      calc = add;
+      break;
+    case "subtraction":
+      calc = subtract;
+      break;
+    case "division":
+      calc = divide;
+      break;
+    default:
+      calc = multiply;
+  }
+
+  resultOutput.textContent = calc(numberA, numberB);
 });

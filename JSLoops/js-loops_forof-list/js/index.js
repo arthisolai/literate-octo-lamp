@@ -17,6 +17,8 @@ const programmingLanguages = [
   "Ruby",
 ];
 
-// --v-- write/change code here --v--
-
-// --^-- write/change code here --^--
+for (let language of programmingLanguages) {
+  const listItem = document.createElement("li");
+  listItem.textContent = language;
+  ol.append(listItem);
+}

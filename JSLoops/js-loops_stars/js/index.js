@@ -21,4 +21,4 @@ function renderStars(filledStars) {
   }
 }
 
-renderStars(0);
+renderStars();

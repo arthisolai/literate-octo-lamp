@@ -6,6 +6,7 @@ console.clear();
 
 const item = ["Egg", 0.25, 12];
 
+export const [name, price, quantity] = item;
 // example: export const [value1, value2] = array;
 
 // EXERCISE 2
@@ -13,17 +14,21 @@ const item = ["Egg", 0.25, 12];
 
 const personChris = [12, "Chris", "Owen"];
 
+export const [ageOfChris, firstNameOfChris, lastNameOfChris] = personChris;
+
 // EXERCISE 3
 // Use array destructuring to extract the variables "firstNameOfAlex" and "lastNameOfAlex".
 // Make sure not to have unused variables.
 
 const personAlex = ["Alex", 12, "Main"];
 
+export const [firstNameOfAlex, , lastNameOfAlex] = personAlex;
 // EXERCISE 4
 // Use array destructuring to extract the last name from the array
 // as variable called "lastName".
 
 const students = ["Christina", "Jon", "Alexandare"];
+export const [, , lastName] = students;
 
 // EXERCISE 5
 // Use array destructuring to extract all of the names from this nested array.
@@ -31,13 +36,16 @@ const students = ["Christina", "Jon", "Alexandare"];
 
 const nestedStudents = ["Chris", ["Ahmad", "Antigoni"], ["Toby", "Sam"]];
 
+export const [student1, studentArr1, studentArr2] = nestedStudents;
+export const [student2, student3] = studentArr1;
+export const [student4, student5] = studentArr2;
 // EXERCISE 6
 // Spread the values of the values array into the function call of the add function.
 // Keep in mind that you need to export the variable 'result' to make the test work.
 
 const values = [1, 6, 7, 9, 12, 5, 4];
 
-const result = add(1); // Spread values inside this function call
+export const result = add(...values); // Spread values inside this function call
 
 function add(...values) {
   return values.reduce(

@@ -1,10 +1,13 @@
 import BoxWithClassName from "../components/BoxWithClassName/BoxWithClassName.js";
+import BoxWithStyledComponents from "../components/BoxWithClassName/BoxWithStyledComponents.js";
 
-export default function HomePage() {
+export default function HomePage({ isBlack }) {
   return (
-    <div>
+    <>
       <BoxWithClassName />
       <BoxWithClassName isBlack />
-    </div>
+      <BoxWithStyledComponents />
+      <BoxWithStyledComponents isBlack={true} />
+    </>
   );
 }

@@ -1,9 +1,13 @@
+import BoxWithStyledComponents from "./BoxWithStyledComponents";
+
 export default function BoxWithClassName({ isBlack }) {
   return (
-    <div
-      className={`box-with-classname${
-        isBlack ? " box-with-classname--black" : ""
-      }`}
-    ></div>
+    <>
+      <div
+        className={`box-with-classname${
+          isBlack ? " box-with-classname--black" : ""
+        }`}
+      ></div>
+    </>
   );
 }

@@ -12,7 +12,7 @@ export default function Product() {
   if (!data) {
     return <h1>Loading...</h1>;
   }
-
+  console.log("data", data);
   return (
     <ProductCard>
       <h2>{data.name}</h2>
@@ -20,9 +20,16 @@ export default function Product() {
       <p>
         Price: {data.price} {data.currency}
       </p>
-      <StyledLink href={"/"}>
-        Back to all
-      </StyledLink>
+      {data.reviews && data.reviews.length > 0 ? (
+        data.reviews.map((review, index) => (
+          <div key={index}>
+            <p>Rating: {review.rating}</p>
+          </div>
+        ))
+      ) : (
+        <p>No rating</p>
+      )}
+      <StyledLink href={"/"}>Back to all</StyledLink>
     </ProductCard>
   );
 }

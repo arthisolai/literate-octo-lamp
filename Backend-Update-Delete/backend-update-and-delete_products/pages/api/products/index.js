@@ -11,6 +11,7 @@ export default async function handler(request, response) {
 
   if (request.method === "POST") {
     try {
+      console.log(request.body);
       const productData = request.body;
       const product = new Product(productData);
       await product.save();
